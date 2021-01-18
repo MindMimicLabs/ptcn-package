@@ -62,7 +62,12 @@ i.e. view_run("_tuning/2021-01-15T05-19-22Z")
 
 ##### Installation 
 
-The development version from GitHub:
+To install the development version from GitHub, please clone the repo. In R change to the local folder and run in the console the following:
 
 - install.packages("devtools")
-- devtools::install_github("MindMimicLabs/ptcn.package")
+- devtools::document()
+- devtools::install()
+
+###### Notes 
+
+The PTCN package is currently under development. Updates to the installation process should be complete soon. 
