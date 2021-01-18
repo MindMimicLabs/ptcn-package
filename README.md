@@ -63,5 +63,6 @@ i.e. view_run("_tuning/2021-01-15T05-19-22Z")
 ##### Installation 
 
 The development version from GitHub:
-install.packages("devtools")
-devtools::install_github("r-lib/devtools")
+
+- install.packages("devtools")
+- devtools::install_github("r-lib/devtools")
