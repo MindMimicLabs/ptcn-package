@@ -59,3 +59,9 @@ Note: the function requires a dataframe containing texts and their labels. You m
 The package tfruns provides functions such as view_run() to produce a compiled report containing either the hyper-tuning and best model training run contained in the "_tuning"log folder. 
 
 i.e. view_run("_tuning/2021-01-15T05-19-22Z")
+
+##### Installation 
+
+The development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("r-lib/devtools")
