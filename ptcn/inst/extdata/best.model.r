@@ -23,7 +23,7 @@ library(sentimentr)
 library(readr)
 library(caret)
 
-data4 = data.frame(x)
+data4 = data.frame(data)
 data4 = data4[,c('text','class')]
 
 # - [7] - Deep Modeling ----

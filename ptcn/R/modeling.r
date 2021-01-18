@@ -35,25 +35,29 @@ library(caret)
 #######################################################################################
 #######################################################################################
 #######################################################################################
-modeling <- function(x) {
+modeling <- function(data,dropout = c(0.50),filters_cnn = c(32,64), filters_lstm = c(32,64),
+                     reg1 = c(5e-4),reg2 = c(5e-4),batch_size = c(40),maxlen = c(200),
+                     max_features = c(2000),embedding_dims = c(1000),leaky_relu = c(0.50),
+                     kernel = c(5),epochs = c(50),pool_size = c(4,8),lr = c(0.004,0.003),
+                     val_split = c(0.20)) {
   starttime = Sys.time()
   print("Hyper-Tuning PTCN ...")
   par <- list(
-    dropout1= c(0.50),
-    filters_cnn= c(32,64),
-    filters_lstm= c(32,64),
-    reg1= c(5e-4),
-    reg2= c(5e-4),
-    batch_size= c(40),
-    maxlen= c(200),
-    max_features = c(2000),
-    embedding_dim= c(1000),
-    leaky_relu= c(0.50),
-    kernel= c(5),
-    epochs= c(50),
-    pool_size= c(4,8),
-    lr= c(0.004,0.003),
-    val_split= c(0.20))
+    dropout1= dropout,
+    filters_cnn= filters_cnn,
+    filters_lstm= filters_lstm,
+    reg1= reg1,
+    reg2= reg2,
+    batch_size= batch_size,
+    maxlen= maxlen,
+    max_features = max_features,
+    embedding_dim= embedding_dims,
+    leaky_relu= leaky_relu,
+    kernel= kernel,
+    epochs= epochs,
+    pool_size= pool_size,
+    lr= lr,
+    val_split= val_split)
   runs <- tuning_run(system.file("extdata", "hyper-tuning.r", package="ptcn"),
                      runs_dir = '_tuning',
                      sample = 1, flags = par)
