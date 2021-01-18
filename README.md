@@ -2,6 +2,8 @@
 
 The package provides the ability to use the "Predict Text Classification Network" or PTCN introduced in "A Deep Learning Neural Network to Predict Congressional Roll Call Votes from Legislative Texts" Machine Learning and Applications: An International Journal (MLAIJ) Vol.7, No.3/4, December 2020 authored by Jonathan Wayne Korn and Mark A. Newman from the Department of Data Science, Harrisburg University, Harrisburg, Pennsylvania for binary text classification tasks. 
 
+https://aircconline.com/mlaij/V7N4/7420mlaij02.pdf
+
 ## General Process of the PTCN Package 
 
 The ptcn package requires: 
