@@ -64,6 +64,9 @@ i.e. view_run("_tuning/2021-01-15T05-19-22Z")
 
 To install the development version from GitHub, please clone the repo. In R change to the local folder and run in the console the following:
 
+- Install Python 3 and Anaconda 
+    - pip install tensroflow
+    - pip install keras
 - install.packages("devtools")
 - devtools::document()
 - devtools::install()
