@@ -1,6 +1,6 @@
-setwd("C:/Users/jonat/Desktop/ptcn_example")
+setwd("C:/Users/Jonathan Korn/Desktop/book-ptcn-main/ptcn_example")
 library(ptcn)
-data <- data.frame(read.csv("data/Test.csv"))
+data <- data.frame(read.csv("./data/Test.csv"))
 colnames(data) = c('text','label')
 data = tail(data, 300)
 data = na.omit(data)
