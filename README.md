@@ -62,13 +62,16 @@ i.e. view_run("_tuning/2021-01-15T05-19-22Z")
 
 ##### Installation 
 
-To install the development version from GitHub, please clone the repo. In R change to the local folder and run in the console the following:
+To install the development version of the ptcn package from GitHub, please clone the repo and perform the following steps: 
 
-- run the 'install.packages.r' script to install the dependencies for the ptcn package. 
-    - Note, some of the packages will be installed from source files stored in the 'packages' folder. 
 - Install Python 3 and Anaconda 
     - pip install tensroflow
     - pip install keras
+    
+In your R session set the working directory to the cloned folder. 
+
+- run the 'install.packages.r' script to install the dependencies for the ptcn package. 
+    - Note, some of the packages will be installed from source files stored in the 'packages' folder. 
 - To install the ptcn package set the working directory in your current R session to the 'ptcn' folder and enter the following:
     - install.packages("devtools")
     - devtools::document()
