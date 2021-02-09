@@ -72,7 +72,7 @@ modeling <- function(data,dropout = c(0.50),filters_cnn = c(32,64), filters_lstm
   #######################################################################################
   starttime = Sys.time()
   print("Training Best Model ...")
-  best_run <- ls_runs(order = eval_acc, decreasing= TRUE, runs_dir = '_tuning')[1,]
+  best_run <- ls_runs(order = metric_val_accuracy, decreasing= TRUE, runs_dir = '_tuning')[1,]
   training_run(system.file("extdata", "best.model.r", package="ptcn"),flags = list(
     dropout1 = best_run$flag_dropout1,
     filters_cnn = best_run$flag_filters_cnn,
