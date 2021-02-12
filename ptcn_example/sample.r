@@ -10,8 +10,9 @@ str(data)
 # - Data Pre-Processing for PTCN ----
 # element (1) x = list of texts
 # element (2) y = list of labels 
+# element (3) num.classes = c(2/3/4)
 # - Note - the lists should correspond with eachother. 
-data.processor_1(data$text, data$label)
+data_processor(data$text, data$label, num.classes = 2)
 
 # - Modeling with the PTCN ----
 # element (1) data,
@@ -30,4 +31,5 @@ data.processor_1(data$text, data$label)
 # element (14) pool_size,
 # element (15) lr,
 # element (16) val_split
-modeling(data.processed)
+# element (17) hyper_sample
+ptcn_binary(data.processed, hyper_sample = 1)
