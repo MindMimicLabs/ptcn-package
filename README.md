@@ -8,13 +8,14 @@ https://aircconline.com/mlaij/V7N4/7420mlaij02.pdf
 
 The ptcn package requires: 
 
-### data.processor_1():
+### data_processor():
 
 Prepare to feed two variables, text and binary labels, to the data.processor_1() function. The function pre-processes the text and equalizies the distribution of the labels to their accompanying texts as followed: 
 
 * The text should be in character or string format. 
 * The labels should be an integer/numerical format of a binary nature (i.e. (0,1)).
 * The texts and labels should be 300 observations at minimum.
+* The num.classes refers to the number of classes to balance distribution. 
 
 The list of texts are feed through the PTCN pre-processing steps inlcuding: 
 
@@ -29,7 +30,9 @@ The list of texts are feed through the PTCN pre-processing steps inlcuding:
 
 The pre-processed texts and the corresponding labels are set to an equalized distribution of randomized samples from each class contained in the original dataset. The results are saved in the global enviorment as a dataframe named 'data.processed' and as a local /.csv file named 'data.processed.csv' in the working directory.
 
-### modeling():
+i.e. data_processor(data$text, data$label, num.classes = 2)
+
+### ptcn_binary():
 
 The newly pre-processed data, 'data.processed', should be feed through the modeling() function in order to intitate the hyper-tuning sessions and best modeling session using the PTCN. The hyper-tuning and best model sessions store their results in the created '_tuning' log folder and the trained final model state is stored as a /.h5 file within the working directory. Note the hyper-tuning is set to run 16 permutations at default, shuffling through a combination of set parameter values that have been identified to work well within the PTCN architecture. 
 
@@ -51,6 +54,33 @@ Experiment with the parameters included within the modeling() function. All para
 * pool_size = c(4,8),
 * lr = c(0.004,0.003),
 * val_split = c(0.20)
+* hyper_sample = c(0.1)
+
+Note: the function requires a dataframe containing texts and their labels. You may implement your own pre-processing steps as long as the data is the same format as 'data.processed'.  
+
+### ptcn_multi():
+
+The newly pre-processed data, 'data.processed', should be feed through the modeling() function in order to intitate the hyper-tuning sessions and best modeling session using the PTCN. The hyper-tuning and best model sessions store their results in the created '_tuning' log folder and the trained final model state is stored as a /.h5 file within the working directory. Note the hyper-tuning is set to run 16 permutations at default, shuffling through a combination of set parameter values that have been identified to work well within the PTCN architecture. 
+
+Experiment with the parameters included within the modeling() function. All parameters are pre-set to the following default values:
+
+* data = 'data.processed' 
+* dropout = c(0.50),
+* filters_cnn = c(32,64), 
+* filters_lstm = c(32,64),
+* reg1 = c(5e-4),
+* reg2 = c(5e-4),
+* batch_size = c(40),
+* maxlen = c(200),
+* max_features = c(2000),
+* embedding_dims = c(1000),
+* leaky_relu = c(0.50),
+* kernel = c(5),
+* epochs = c(50),
+* pool_size = c(4,8),
+* lr = c(0.004,0.003),
+* val_split = c(0.20)
+* hyper_sample = c(0.1)
 
 Note: the function requires a dataframe containing texts and their labels. You may implement your own pre-processing steps as long as the data is the same format as 'data.processed'.  
 
