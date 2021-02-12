@@ -66,6 +66,7 @@ data_processor <- function(x, y, num.classes = c(NULL)) {
   N4 =  nrow(data.even)
   ind4 = sample(N4, N4*1, replace = FALSE)
   data.processed = data.even[ind4,]
+  data.processed$text = as.character(data.processed$text)
   } else if(num.classes == 3){
     split_0 = merged.data[which(merged.data$class == 0), ]
     split_1 = merged.data[which(merged.data$class == 1), ]
@@ -75,6 +76,7 @@ data_processor <- function(x, y, num.classes = c(NULL)) {
     N4 =  nrow(data.even)
     ind4 = sample(N4, N4*1, replace = FALSE)
     data.processed = data.even[ind4,]
+    data.processed$text = as.character(data.processed$text)
   } else if(num.classes == 4){
     split_0 = merged.data[which(merged.data$class == 0), ]
     split_1 = merged.data[which(merged.data$class == 1), ]
@@ -86,6 +88,7 @@ data_processor <- function(x, y, num.classes = c(NULL)) {
     N4 =  nrow(data.even)
     ind4 = sample(N4, N4*1, replace = FALSE)
     data.processed = data.even[ind4,]
+    data.processed$text = as.character(data.processed$text)
   }
   assign("data.processed",data.processed, envir = globalenv())
   str(data.processed)
