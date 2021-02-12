@@ -15,7 +15,7 @@ Prepare to feed two variables, text and binary labels, to the data.processor_1()
 * The text should be in character or string format. 
 * The labels should be an integer/numerical format of a binary nature (i.e. (0,1)).
 * The texts and labels should be 300 observations at minimum.
-* The num.classes refers to the number of classes to balance distribution. 
+* The num.classes refers to the number of classes to balance distribution. Only 2,3,4 classes available so far. 
 
 The list of texts are feed through the PTCN pre-processing steps inlcuding: 
 
