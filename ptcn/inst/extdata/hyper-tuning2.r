@@ -23,8 +23,9 @@ library(sentimentr)
 library(readr)
 library(caret)
 
-data4 = data.frame(data)
+data4 = data.frame(data.processed)
 data4 = data4[,c('text','class')]
+data4$text = as.character(data4$text)
 
 # - [7] - Deep Modeling ----
 

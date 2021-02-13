@@ -23,7 +23,7 @@ library(sentimentr)
 library(readr)
 library(caret)
 
-data4 = data.frame(data)
+data4 = data.frame(data.processed)
 data4 = data4[,c('text','class')]
 data4$text = as.character(data4$text)
 
@@ -82,6 +82,7 @@ model.data = cbind(x_train, y_train)
 model.data = data.frame(model.data)
 num.col = ncol(model.data)-1
 colnames(model.data) = c(1:num.col, 'label')
+model.data[,-c(ncol(model.data))] = sapply(model.data[,-c(ncol(model.data))], as.numeric)
 str(model.data)
 
 folds <- createFolds(y = model.data[, 'label'], k = 10, list = F)
