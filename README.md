@@ -13,9 +13,9 @@ The ptcn package requires:
 Prepare to feed two variables, text and binary labels, to the data.processor_1() function. The function pre-processes the text and equalizies the distribution of the labels to their accompanying texts as followed: 
 
 * The text should be in character or string format. 
-* The labels should be an integer/numerical format of a binary nature (i.e. (0,1)).
+* The labels should be an integer/numerical format (i.e. (0,1,2,3,4)).
 * The texts and labels should be 300 observations at minimum.
-* The num.classes refers to the number of classes to balance distribution. Only 2,3,4 classes available so far. 
+* The num.classes refers to the number of classes to balance distribution. Only 2,3,4, or 5 classes available so far. 
 
 The list of texts are feed through the PTCN pre-processing steps inlcuding: 
 
@@ -107,7 +107,7 @@ In your R session set the working directory to the cloned folder.
     - devtools::document()
     - devtools::install()
     
- Everything if installed successfully should let you take advantage of the ptcn data.processor() and modeling() functions. 
+ Everything if installed successfully should let you take advantage of the ptcn data.processor(), ptcn_binary(), or ptcn_multi() functions. 
 
 ###### Notes 
 
