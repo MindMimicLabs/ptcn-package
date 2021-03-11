@@ -98,7 +98,7 @@ To install the development version of the ptcn package from GitHub, please clone
     - pip install tensorflow==1.15 or conda install tensorflow==1.15
     - pip install keras
     
-In your R session set the working directory to the cloned folder. 
+In your R session set the working directory to the cloned folder. It is best to use version 3.5 with the ptcn package. 
 
 - run the 'install.packages.r' script to install the dependencies for the ptcn package. 
     - Note, some of the packages will be installed from source files stored in the 'packages' folder. 
