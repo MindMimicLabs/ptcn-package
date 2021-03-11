@@ -35,10 +35,10 @@ library(caret)
 #######################################################################################
 #######################################################################################
 #######################################################################################
-ptcn_multi <- function(data,dropout = c(0.50),filters_cnn = c(32,64), filters_lstm = c(32,64),
+ptcn_multi <- function(data.processed,dropout = c(0.50),filters_cnn = c(32,64), filters_lstm = c(32,64),
                      reg1 = c(5e-4),reg2 = c(5e-4),batch_size = c(40),maxlen = c(200),
                      max_features = c(2000),embedding_dims = c(1000),leaky_relu = c(0.50),
-                     kernel = c(5),epochs = c(50),pool_size = c(4,8),lr = c(0.004,0.003),
+                     kernel = c(5),epochs = c(10),pool_size = c(4,8),lr = c(0.004,0.003),
                      val_split = c(0.20), hyper_sample = c(0.1)) {
   starttime = Sys.time()
   print("Hyper-Tuning PTCN ...")

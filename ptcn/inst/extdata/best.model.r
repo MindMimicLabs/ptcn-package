@@ -1,5 +1,6 @@
 # - [0] - Load Required Packages ----
 
+library(tfruns)
 library(keras)
 library(tensorflow)
 library(xml2)
@@ -21,6 +22,10 @@ library(ggplot2)
 library(qdap)
 library(sentimentr)
 library(readr)
+library(NLP)
+library(openNLP)
+library(openNLPmodels.en)
+library(gsubfn)
 library(caret)
 
 data4 = data.frame(data.processed)

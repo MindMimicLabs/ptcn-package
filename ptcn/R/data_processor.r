@@ -1,8 +1,6 @@
 #' @export
-#######################################################################################
-#######################################################################################
-#######################################################################################
-#######################################################################################
+# - [0] - Load Required Packages ----
+
 library(keras)
 library(tensorflow)
 library(xml2)
@@ -28,6 +26,7 @@ library(NLP)
 library(openNLP)
 library(openNLPmodels.en)
 library(gsubfn)
+
 # - Pre-processes a List of Text and a List of Binary Labels into a single frame
 #######################################################################################
 #######################################################################################
@@ -59,14 +58,14 @@ data_processor <- function(x, y, num.classes = c(NULL)) {
   merged.data = data.frame(cbind(data.text, y))
   colnames(merged.data) = c('text','class')
   if(num.classes == 2){
-  split_0 = merged.data[which(merged.data$class == 0), ]
-  split_1 = merged.data[which(merged.data$class == 1), ]
-  min = min(c(length(split_0$class),length(split_1$class)))
-  data.even = rbind(split_0[1:min,], split_1[1:min,])
-  N4 =  nrow(data.even)
-  ind4 = sample(N4, N4*1, replace = FALSE)
-  data.processed = data.even[ind4,]
-  data.processed$text = as.character(data.processed$text)
+    split_0 = merged.data[which(merged.data$class == 0), ]
+    split_1 = merged.data[which(merged.data$class == 1), ]
+    min = min(c(length(split_0$class),length(split_1$class)))
+    data.even = rbind(split_0[1:min,], split_1[1:min,])
+    N4 =  nrow(data.even)
+    ind4 = sample(N4, N4*1, replace = FALSE)
+    data.processed = data.even[ind4,]
+    data.processed$text = as.character(data.processed$text)
   } else if(num.classes == 3){
     split_0 = merged.data[which(merged.data$class == 0), ]
     split_1 = merged.data[which(merged.data$class == 1), ]
@@ -89,7 +88,21 @@ data_processor <- function(x, y, num.classes = c(NULL)) {
     ind4 = sample(N4, N4*1, replace = FALSE)
     data.processed = data.even[ind4,]
     data.processed$text = as.character(data.processed$text)
+  } else if(num.classes == 5){
+    split_0 = merged.data[which(merged.data$class == 0), ]
+    split_1 = merged.data[which(merged.data$class == 1), ]
+    split_2 = merged.data[which(merged.data$class == 2), ]
+    split_3 = merged.data[which(merged.data$class == 3), ]
+    split_4 = merged.data[which(merged.data$class == 4), ]
+    min = min(c(length(split_0$class),length(split_1$class), length(split_2$class),
+                length(split_3$class), length(split_4$class)))
+    data.even = rbind(split_0[1:min,], split_1[1:min,], split_2[1:min,], split_3[1:min,], split_4[1:min,])
+    N4 =  nrow(data.even)
+    ind4 = sample(N4, N4*1, replace = FALSE)
+    data.processed = data.even[ind4,]
+    data.processed$text = as.character(data.processed$text)
   }
+  data.processed = na.omit(data.processed)
   assign("data.processed",data.processed, envir = globalenv())
   str(data.processed)
   table(data.processed$class)
