@@ -5,10 +5,9 @@ if (!require('keras')) {
 install_keras()
 if (!require('tensorflow')) {
   install.packages("tensorflow", dependencies = TRUE)
-  #install_tensorflow(version = "1.15.0")
   library(tensorflow)
 }
-install_tensorflow()
+install_tensorflow(version = "1.15.0")
 if (!require('tfruns')) {
   install.packages("tfruns", dependencies = TRUE)
   library(tfruns)
@@ -77,9 +76,9 @@ if (!require('hunspell')) {
   install.packages("hunspell", dependencies = TRUE)
   library(hunspell)
 }
-Sys.setenv(JAVA_HOME="C:/Program Files/Java/jdk-15.0.2/")
+Sys.setenv(JAVA_HOME="C:/Program Files/Java/jre1.8.0_281/")
 if (!require('rJava')) {
-  install.packages("rJava","http://rforge.net")
+  install.packages('./packages/rJava_0.9-11.tar.gz', repos = NULL, type ='source')
   library(rJava)
 }
 if (!require('devtools')) {
@@ -91,7 +90,7 @@ if (!require('igraph')) {
   library(igraph)
 }
 if (!require('qdap')) {
-  install.packages("qdap", dependencies = TRUE)
+  install.packages('./packages/qdap_2.3.2.tar.gz', repos = NULL, type ='source')
   library(qdap)
 }
 if (!require('sentimentr')) {
@@ -107,7 +106,7 @@ if (!require('caret')) {
   library(caret)
 }
 if (!require('openNLP')) {
-  install.packages("openNLP")  
+  install.packages('./packages/openNLP_0.2-6.tar.gz', repos = NULL, type ='source')
   library(openNLP)
 }
 if (!require('openNLPmodels.en')) {
