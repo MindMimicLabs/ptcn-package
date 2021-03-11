@@ -95,7 +95,7 @@ i.e. view_run("_tuning/2021-01-15T05-19-22Z")
 To install the development version of the ptcn package from GitHub, please clone the repo and perform the following steps: 
 
 - Install Python 3 and Anaconda 
-    - pip install tensorflow==1.15
+    - pip install tensorflow==1.15 or conda install tensorflow==1.15
     - pip install keras
     
 In your R session set the working directory to the cloned folder. 
