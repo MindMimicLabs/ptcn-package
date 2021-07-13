@@ -36,7 +36,7 @@ i.e. data_processor(data$text, data$label, num.classes = 2)
 
 The newly pre-processed data, 'data.processed', should be feed through the modeling() function in order to intitate the hyper-tuning sessions and best modeling session using the PTCN. The hyper-tuning and best model sessions store their results in the created '_tuning' log folder and the trained final model state is stored as a /.h5 file within the working directory. Note the hyper-tuning is set to run 16 permutations at default, shuffling through a combination of set parameter values that have been identified to work well within the PTCN architecture. 
 
-Experiment with the parameters included within the modeling() function. All parameters are pre-set to the following default values:
+Experiment with the parameters included within the modeling function. All parameters are pre-set to the following default values:
 
 * data = 'data.processed' 
 * dropout = c(0.50),
@@ -62,7 +62,7 @@ Note: the function requires a dataframe containing texts and their labels. You m
 
 The newly pre-processed data, 'data.processed', should be feed through the modeling() function in order to intitate the hyper-tuning sessions and best modeling session using the PTCN. The hyper-tuning and best model sessions store their results in the created '_tuning' log folder and the trained final model state is stored as a /.h5 file within the working directory. Note the hyper-tuning is set to run 16 permutations at default, shuffling through a combination of set parameter values that have been identified to work well within the PTCN architecture. 
 
-Experiment with the parameters included within the modeling() function. All parameters are pre-set to the following default values:
+Experiment with the parameters included within the modeling function. All parameters are pre-set to the following default values:
 
 * data = 'data.processed' 
 * dropout = c(0.50),
